@@ -26,10 +26,7 @@ rust_library {
     cargo_pkg_version: "0.4.8",
     srcs: ["perf-event/src/lib.rs"],
     edition: "2018",
-    features: [
-        "default",
-        "hooks",
-    ],
+    features: ["default"],
     rustlibs: [
         "libbitflags",
         "liblibc",
@@ -44,51 +41,3 @@ rust_library {
     min_sdk_version: "31",
 }
 
-rust_test {
-    name: "perf-event_test_src_lib",
-    host_supported: true,
-    crate_name: "perf_event",
-    cargo_env_compat: true,
-    cargo_pkg_version: "0.4.8",
-    srcs: ["perf-event/src/lib.rs"],
-    test_suites: ["general-tests"],
-    auto_gen_config: true,
-    test_options: {
-        unit_test: true,
-    },
-    edition: "2018",
-    features: [
-        "default",
-        "hooks",
-    ],
-    rustlibs: [
-        "libbitflags",
-        "liblibc",
-        "libperf_event_open_sys",
-    ],
-}
-
-rust_test {
-    name: "perf-event_test_tests_breakpoint",
-    host_supported: true,
-    crate_name: "breakpoint",
-    cargo_env_compat: true,
-    cargo_pkg_version: "0.4.8",
-    srcs: ["tests/breakpoint.rs"],
-    test_suites: ["general-tests"],
-    auto_gen_config: true,
-    test_options: {
-        unit_test: true,
-    },
-    edition: "2018",
-    features: [
-        "default",
-        "hooks",
-    ],
-    rustlibs: [
-        "libbitflags",
-        "liblibc",
-        "libperf_event",
-        "libperf_event_open_sys",
-    ],
-}
