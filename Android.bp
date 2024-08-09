@@ -41,3 +41,27 @@ rust_library {
     min_sdk_version: "31",
 }
 
+// rust_bindgen {
+//     name: "libperf_event_open_sys",
+//     host_supported: true,
+//     crate_name: "perf_event_open_sys",
+//     cargo_env_compat: true,
+//     cargo_pkg_version: "4.0.0",
+//     wrapper_src: "perf-event-open-sys/wrapper.h",
+//     srcs: ["perf-event-open-sys/src/lib.rs"],
+//     source_stem: "perf-event-open-sys/src/bindings",
+//     edition: "2018",
+//     rustlibs: ["liblibc"],
+//     bindgen_flags: [
+//         "--impl-debug",
+//         "--with-derive-default",
+//         "--no-prepend-enum-name",
+//     ],
+//     apex_available: [
+//         "//apex_available:platform",
+//         "//apex_available:anyapex",
+//     ],
+//     product_available: true,
+//     vendor_available: true,
+//     min_sdk_version: "31",
+// }
