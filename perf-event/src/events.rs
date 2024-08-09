@@ -42,7 +42,7 @@ use perf_event_open_sys::bindings;
 /// [`Hardware`]: enum.Hardware.html
 /// [`Software`]: enum.Software.html
 /// [`Cache`]: struct.Cache.html
-#[derive(Clone, Debug, Eq, PartialEq)]
+#[derive(Clone, Copy, Debug, Eq, PartialEq)]
 pub enum Event {
     #[allow(missing_docs)]
     Hardware(Hardware),
@@ -233,7 +233,7 @@ impl From<Software> for Event {
 /// [`which`]: enum.WhichCache.html
 /// [`operation`]: enum.CacheOp.html
 /// [`result`]: enum.CacheResult.html
-#[derive(Debug, Clone, Eq, PartialEq)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub struct Cache {
     /// Which cache is being monitored? (data, instruction, ...)
     pub which: WhichCache,
